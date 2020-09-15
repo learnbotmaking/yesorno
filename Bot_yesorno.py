@@ -3,11 +3,11 @@ from random import randrange
 import re
 import time
 
-reddit = praw.Reddit(user_agent='USER AGENT',
-                  client_id='CLIENT ID',
-                  client_secret='SECRET',
-                  username='USERNAME',
-                  password='PASSWORD')
+reddit = praw.Reddit(user_agent='learnbotmaking version:1.0.0.0 u/learnbotmaking',
+                  client_id='DKCBqL1Plj8F8A',
+                  client_secret='utsa-fyYdzgIqVjX-Pn4w3zvu08',
+                  username='learnbotmaking',
+                  password='learnbotmaking')
 
 def getResponse():
     number = randrange(1, 1000000)
@@ -25,7 +25,7 @@ def getResponse():
         else:
             return "No"
 
-subreddit = reddit.subreddit('SUBREDDIT')
+subreddit = reddit.subreddit('yesorno')
 
 for submission in subreddit.stream.submissions():
     if re.search("!YesOrNo", submission.title, re.IGNORECASE):
